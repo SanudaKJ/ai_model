@@ -106,7 +106,7 @@ def predict():
         if not data:
             return jsonify({"error": "No data provided"}), 400
         
-        required_fields = ["company_id", "company_size", "tariff_category", "machines"]
+        required_fields = [ "company_size", "tariff_category", "machines"]
         for field in required_fields:
             if field not in data:
                 return jsonify({"error": f"Missing required field: {field}"}), 400
@@ -188,7 +188,7 @@ def predict():
         )
         
         features = {
-            'company_id': data["company_id"],
+            
             'company_size': data["company_size"],
             'tariff_category': tariff_id,
             'actual_tariff': actual_tariff,
